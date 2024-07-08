@@ -325,10 +325,10 @@
     "@turf/boolean-clockwise" "6.5.0"
     camelcase-keys "6.2.2"
 
-"@aws-amplify/graphql-transformer-interfaces@^3.9.0":
-  version "3.10.1"
-  resolved "https://registry.npmjs.org/@aws-amplify/graphql-transformer-interfaces/-/graphql-transformer-interfaces-3.10.1.tgz#18283fe97be3abf58f8564f877b7871fc11f4b9b"
-  integrity sha512-daf+cpOSw3lKiS+Tpc5Oo5H+FCkHi/8z+0mAR/greQGPJWzcHv9j2u1Jiy36UvI01ypOhHme58pAs/fKWLWDBQ==
+"@aws-amplify/graphql-docs-generator@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/graphql-docs-generator/-/graphql-docs-generator-4.2.0.tgz#d1c44bb73806f4e6c16c2ce616032297828ba78c"
+  integrity sha512-V9UXceZlYkumgvcHGp7kivTgvhxYcAdc5C+JCJPyDGvowktExdsnEap6WWn0JHmUK2+5ceBIi4BjcEubn+pXVA==
   dependencies:
     graphql "^15.5.0"
 
