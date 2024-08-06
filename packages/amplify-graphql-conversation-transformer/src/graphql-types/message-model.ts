@@ -122,14 +122,46 @@ const makeConversationMessageModel = (
   const content = makeField('content', [], makeListType(makeNamedType('ContentBlock')));
   const context = makeField('context', [], makeNamedType('AWSJSON'));
   const uiComponents = makeField('uiComponents', [], makeListType(makeNamedType('AWSJSON')));
-  const assistantContent = makeField('assistantContent', [], makeListType(makeNamedType('ContentBlock')));
 
   const object = {
     ...blankObject(modelName),
     interfaces: [conversationMessageInterface],
-    fields: [id, conversationId, sessionField, role, content, context, uiComponents, assistantContent],
+    fields: [id, conversationId, sessionField, role, content, context, uiComponents],
     directives: typeDirectives,
   };
 
   return object;
 };
+
+/*
+type ConversationMessage {
+  id: ID!
+  conversationId: ID!
+  content: [ContentBlock]
+  role: ConversationParticipantRole! // "user" | "assistant"
+  session: ConversationSession @belongsTo(references: ["conversationId"])
+  aiContext: AWSJSON
+  tools: [AWSJSON] // TODO: update shape and property name
+}
+
+List user and assistant messages by conversation ID + owner sorted by createdAt
+- GSI
+  - PK: conversationID
+  - SK: createdAt (maybe id as UUIDv7)
+- Query
+  - index: ConversationID-createdAt
+  - ScanIndexForward: false
+  - filter-expression: AuthFilter
+  - values: conversationID
+
+
+List all messages where user message has an assistant response by conversation ID + owner + user message ID sorted by createdAt
+- GSI
+  - PK: conversationID
+  - SK: role#createdAt / role#id (v7)
+- Query
+  - index: ConversationID-role#createdAt
+  - filter-expression: AuthFilter
+
+
+*/

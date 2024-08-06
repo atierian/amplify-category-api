@@ -8,9 +8,6 @@ import { parse, print } from 'graphql';
 import { ConversationTransformer } from '..';
 import { BelongsToTransformer, HasManyTransformer, HasOneTransformer } from '@aws-amplify/graphql-relational-transformer';
 import { FunctionTransformer } from '../../../amplify-graphql-function-transformer/src';
-import { QueryDefinition } from 'aws-cdk-lib/aws-logs';
-import { Subscription } from 'aws-cdk-lib/aws-sns';
-import { GraphqlApi } from 'aws-cdk-lib/aws-appsync';
 
 test('conversation route valid schema', () => {
   const authConfig: AppSyncAuthConfiguration = {
@@ -52,13 +49,13 @@ test('conversation route valid schema', () => {
       id: ID!
       conversationId: ID!
       role: ConversationParticipantRole
-      content: String
+      content: [ContentBlock!]!
       context: AWSJSON
       uiComponents: [AWSJSON]
     }
 
     type Mutation {
-        pirateChat(id: ID, conversationId: ID!, content: String): ConversationMessage
+        pirateChat(conversationId: ID!, content: [ContentBlockInput!]!, aiContext: AWSJSON): ConversationMessage
         @conversation(
           aiModel: "Claude3Haiku",
           functionName: "conversation-handler",
@@ -66,6 +63,8 @@ test('conversation route valid schema', () => {
           tools: [{ name: "getTemperature", description: "does a thing" }, { name: "plus", description: "does a different thing" }]
         )
     }
+
+    ${contentTypes}
   `;
 
   const modelTransformer = new ModelTransformer();
@@ -88,7 +87,7 @@ test('conversation route valid schema', () => {
   ];
 
   const processed = new GraphQLTransform({ transformers }).preProcessSchema(parse(inputSchema));
-  // console.log(print(processed))
+  console.log(print(processed))
 
   const out = testTransform({
     schema: inputSchema,
@@ -137,19 +136,21 @@ test('conversation route without tools', () => {
       id: ID!
       conversationId: ID!
       role: ConversationParticipantRole
-      content: String
+      content: [ContentBlock!]!
       context: AWSJSON
       uiComponents: [AWSJSON]
     }
 
     type Mutation {
-        pirateChat(id: ID, conversationId: ID!, content: String): ConversationMessage
+        pirateChat(conversationId: ID!, content: [ContentBlockInput!]!, aiContext: AWSJSON): ConversationMessage
         @conversation(
           aiModel: "Claude3Haiku",
           functionName: "conversation-handler",
           systemPrompt: "You are a helpful chatbot. Answer questions to the best of your ability."
         )
     }
+
+    ${contentTypes}
   `;
 
   const modelTransformer = new ModelTransformer();
@@ -213,3 +214,94 @@ test('conversation route without tools', () => {
     session.listMessages
     --> query - listConversationMessagepirateChats
 */
+
+
+
+
+const contentTypes = `
+input DocumentBlockSourceInput {
+  bytes: String
+}
+input DocumentBlockInput {
+  format: String!
+  name: String!
+  source: DocumentBlockSourceInput!
+}
+input ImageBlockSourceInput {
+  bytes: String
+}
+input ImageBlockInput {
+  format: String!
+  source: ImageBlockSourceInput!
+}
+input ToolResultContentBlockInput {
+  document: DocumentBlockInput
+  image: ImageBlockInput
+  json: AWSJSON
+  text: String
+}
+input ToolResultBlockInput {
+  content: [ToolResultContentBlockInput!]!
+  toolUseId: String!
+  status: String
+}
+type DocumentBlockSource {
+  bytes: String
+}
+type DocumentBlock {
+  format: String!
+  name: String!
+  source: DocumentBlockSource!
+}
+type ImageBlock {
+  format: String!
+  source: ImageBlockSource!
+}
+type ImageBlockSource {
+  bytes: String
+}
+type ToolUseBlock {
+  toolUseId: String!
+  name: String!
+  input: AWSJSON!
+}
+type ToolResultContentBlock {
+  document: DocumentBlock
+  image: ImageBlock
+  json: AWSJSON
+  text: String
+}
+type ToolResultBlock {
+  content: [ToolResultContentBlock!]!
+  toolUseId: String!
+  status: String
+}
+type ContentBlockText {
+  text: String
+}
+type ContentBlockImage {
+  image: ImageBlock
+}
+type ContentBlockDocument {
+  document: DocumentBlock
+}
+type ContentBlockToolUse {
+  toolUse: ToolUseBlock
+}
+type ContentBlockToolResult {
+  toolResult: ToolResultBlock
+}
+input ContentBlockInput {
+  text: String
+  document: DocumentBlockInput
+  image: ImageBlockInput
+  toolResult: ToolResultBlockInput
+}
+type ContentBlock {
+  text: String
+  document: DocumentBlock
+  image: ImageBlock
+  toolResult: ToolResultBlock
+  toolUse: ToolUseBlock
+}
+`;
