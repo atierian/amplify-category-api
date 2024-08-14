@@ -346,10 +346,58 @@
 
 "@aws-amplify/graphql-docs-generator@4.2.1":
   version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/graphql-docs-generator/-/graphql-docs-generator-4.2.1.tgz#1069b43f3a796ece7d6ac30f66f75a5103cf3d96"
+  resolved "https://registry.npmjs.org/@aws-amplify/graphql-docs-generator/-/graphql-docs-generator-4.2.1.tgz#1069b43f3a796ece7d6ac30f66f75a5103cf3d96"
   integrity sha512-ReBlY5//mWOmO0FL2ndswB9ku+vpg/JTY9Wwemjm/ibyoLHU1ojtGkPBkKH0CzbpOkIuEkIBLIg9EZ2yca/6oA==
   dependencies:
     graphql "^15.5.0"
+    handlebars "4.7.7"
+    yargs "^15.1.0"
+
+"@aws-amplify/graphql-generation-transformer@file:packages/amplify-graphql-generation-transformer":
+  version "0.1.0"
+  dependencies:
+    "@aws-amplify/graphql-directives" "1.1.0"
+    "@aws-amplify/graphql-transformer-core" "2.9.3"
+    "@aws-amplify/graphql-transformer-interfaces" "3.10.1"
+    graphql "^15.5.0"
+    graphql-mapping-template "4.20.16"
+    graphql-transformer-common "4.31.1"
+    immer "^9.0.12"
+
+"@aws-amplify/graphql-generator@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.npmjs.org/@aws-amplify/graphql-generator/-/graphql-generator-0.4.3.tgz#1d14a3c1d7a5178369cd4dd351d093003403cd6c"
+  integrity sha512-21cbUm7n1f0Ox4UeXNkmcikWgE4ws9vdZqySGTGpERoC5OHPfSsu5KFQ/+V4XePUcEI5ofE+6R7xVH1BEaeUCA==
+  dependencies:
+    "@aws-amplify/appsync-modelgen-plugin" "2.12.2"
+    "@aws-amplify/graphql-directives" "^1.0.1"
+    "@aws-amplify/graphql-docs-generator" "4.2.1"
+    "@aws-amplify/graphql-types-generator" "3.6.0"
+    "@graphql-codegen/core" "^2.6.6"
+    "@graphql-tools/apollo-engine-loader" "^8.0.0"
+    graphql "^15.5.0"
+    prettier "^1.19.1"
+
+"@aws-amplify/graphql-types-generator@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.npmjs.org/@aws-amplify/graphql-types-generator/-/graphql-types-generator-3.6.0.tgz#a104eee0492744e96dff662d1e0cd694f4ccc8d6"
+  integrity sha512-yjPXJ2dYZwtGvwwcEQ5RDNlwTsd/hUfD2Dgguo999Gu3mQjz7nV4l7CXD/Oxo/QzwtU/4rmTX69yadBpR+he3A==
+  dependencies:
+    "@babel/generator" "7.0.0-beta.4"
+    "@babel/types" "7.0.0-beta.4"
+    babel-generator "^6.26.1"
+    babel-types "^6.26.0"
+    change-case "^4.1.1"
+    common-tags "^1.8.0"
+    core-js "^3.6.4"
+    fs-extra "^8.1.0"
+    globby "^11.1.0"
+    graphql "^15.5.0"
+    inflected "^2.0.4"
+    prettier "^1.19.1"
+    rimraf "^3.0.0"
+    source-map-support "^0.5.16"
+    yargs "^15.1.0"
 
 "@aws-amplify/interactions@4.1.12":
   version "4.1.12"
