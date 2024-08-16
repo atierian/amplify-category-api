@@ -1,0 +1,1 @@
+{"version":3,"file":"appSync-rds-db-config.d.ts","sourceRoot":"","sources":["../../../../src/provider-utils/awscloudformation/service-walkthroughs/appSync-rds-db-config.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,sBAAsB,EAAE,wBAAwB,EAAE,MAAM,uCAAuC,CAAC;AASzG,eAAO,MAAM,qCAAqC,WAAkB,sBAAsB,KAAG,QAAQ,wBAAwB,CAoD5H,CAAC"}

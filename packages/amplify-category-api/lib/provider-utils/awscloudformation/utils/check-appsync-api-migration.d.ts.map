@@ -1,0 +1,1 @@
+{"version":3,"file":"check-appsync-api-migration.d.ts","sourceRoot":"","sources":["../../../../src/provider-utils/awscloudformation/utils/check-appsync-api-migration.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAA2D,MAAM,+BAA+B,CAAC;AAKpH,eAAO,MAAM,gCAAgC,YAAmB,UAAU,WAAW,MAAM,YAAY,OAAO,KAAG,QAAQ,OAAO,CAa/H,CAAC"}

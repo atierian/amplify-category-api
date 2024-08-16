@@ -1,0 +1,2 @@
+export declare function convertDeperecatedRestApiPaths(deprecatedParametersFileName: string, deprecatedParametersFilePath: string, resourceName: string): {};
+//# sourceMappingURL=convert-deprecated-apigw-paths.d.ts.map

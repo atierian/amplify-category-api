@@ -1,0 +1,1 @@
+{"version":3,"file":"opensearch.d.ts","sourceRoot":"","sources":["../../../src/CFNParser/resource-processors/opensearch.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,0BAA0B,EAAE,MAAM,UAAU,CAAC;AACtD,OAAO,EAAE,sBAAsB,EAAE,yBAAyB,EAAE,MAAM,gBAAgB,CAAC;AAEnF,eAAO,MAAM,uBAAuB,iBACpB,MAAM,YACV,sBAAsB,cACpB,0BAA0B,KACrC,yBAOF,CAAC"}

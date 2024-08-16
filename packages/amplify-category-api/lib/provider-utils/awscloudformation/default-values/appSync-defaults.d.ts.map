@@ -1,0 +1,1 @@
+{"version":3,"file":"appSync-defaults.d.ts","sourceRoot":"","sources":["../../../../src/provider-utils/awscloudformation/default-values/appSync-defaults.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,+BAA+B,CAAC;AAGxD,eAAO,MAAM,cAAc,YAAa;IAAE,WAAW,EAAE,OAAO,CAAC;IAAC,aAAa,EAAE;QAAE,WAAW,EAAE,MAAM,CAAA;KAAE,CAAA;CAAE;;;;;;;;CAevG,CAAC"}

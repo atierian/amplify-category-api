@@ -1,0 +1,1 @@
+{"version":3,"file":"lambda-arn-to-config.d.ts","sourceRoot":"","sources":["../../src/api/lambda-arn-to-config.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAyE,MAAM,+BAA+B,CAAC;AAIlI,OAAO,EAAE,uBAAuB,EAAE,MAAM,0BAA0B,CAAC;AAKnE,eAAO,MAAM,iBAAiB,YAAmB,UAAU,OAAO,GAAG,KAAG,QAAQ,uBAAuB,CAgCtG,CAAC"}

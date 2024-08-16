@@ -1,0 +1,1 @@
+{"version":3,"file":"get-appsync-resolver-config.d.ts","sourceRoot":"","sources":["../../../../src/provider-utils/awscloudformation/utils/get-appsync-resolver-config.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,+BAA+B,CAAC;AAS3D,eAAO,MAAM,iBAAiB,YAAmB,UAAU,gBAAgB,MAAM,+DAMhF,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"add-graphql-datasource.d.ts","sourceRoot":"","sources":["../../../src/commands/api/add-graphql-datasource.ts"],"names":[],"mappings":"AAEA,OAAO,EACL,UAAU,EAOX,MAAM,+BAA+B,CAAC;AAGvC,OAAO,KAAK,OAAO,MAAM,SAAS,CAAC;AAenC,eAAO,MAAM,IAAI,2BAAa,CAAC;AAK/B,eAAO,MAAM,GAAG,YAAmB,UAAU,KAAG,QAAQ,IAAI,CA0I3D,CAAC;AA6DF,eAAO,MAAM,UAAU,0BAA2B,MAAM,KAAG,QAAQ,YAqBlE,CAAC"}

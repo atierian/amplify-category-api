@@ -1,0 +1,1 @@
+{"version":3,"file":"apigw-defaults.d.ts","sourceRoot":"","sources":["../../../../src/provider-utils/awscloudformation/default-values/apigw-defaults.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,cAAc,YAAa;IAAE,aAAa,EAAE;QAAE,WAAW,EAAE,MAAM,CAAA;KAAE,CAAA;CAAE;;;;CAUjF,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"get-appsync-auth-config.d.ts","sourceRoot":"","sources":["../../../../src/provider-utils/awscloudformation/utils/get-appsync-auth-config.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,+BAA+B,CAAC;AAS3D,eAAO,MAAM,aAAa,YAAmB,UAAU,gBAAgB,MAAM;;;EAS5E,CAAC"}
